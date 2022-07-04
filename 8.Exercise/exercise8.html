@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 8</title>
+	</head>
+	<body>
+
+		<!-- Exrrcise 8.1 -->
+		<button id="todo-button" onclick="changeClick()">Click me</button>
+		<script>
+			function changeClick() {
+					let button = document.getElementById('todo-button');
+					button.innerText = 'Done';
+			}
+	</script>
+
+	<!-- Exercise 8.2 -->
+	<div id="counter">0</div>
+	<button id="raise" onclick="raiseOne()">Up</button>
+	<script>
+		let count = 0;
+
+		function raiseOne() {
+			count = count + 1;
+			let newCount = document.getElementById('counter');
+			newCount.innerText = count;
+		}
+	</script>
+
+	<!-- Exercise 8.3 -->
+	<div id="counter2">0</div>
+	<button onclick="raiseOne2()">Up</button>
+	<button onclick="decreaseOne()">Down</button>
+	<script>
+		let count2 = 0;
+
+		function raiseOne2 () {
+			count2 = count2 + 1;
+			updateCount();
+		}
+
+		function decreaseOne () {
+			count2 = count2 - 1;
+			updateCount();
+		}
+
+		function updateCount() {
+			let newCount2 = document.getElementById('counter2');
+			newCount2.innerText = count2
+		}
+
+	</script>
+	</body>
+</html>
