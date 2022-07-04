@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 7</title>
+	</head>
+	<body>
+
+		<!-- Exercise 7.1 -->
+		<script>
+			function toUpper(stringArray) {
+				let result = [];
+
+				stringArray.forEach(function (str) {
+					result.push(str.toUpperCase())
+				});
+
+				console.log(result)
+			}
+
+			toUpper(['banana','apple']);
+		</script>
+
+		<!-- Exercise 7.2 -->
+		<script>
+			function arrayDouble(array) {
+				let resultAnimals = [];
+
+				array.forEach(function (noise) {
+					resultAnimals.push(noise);
+					resultAnimals.push(noise);
+				});
+
+				console.log(resultAnimals);
+			}
+
+			arrayDouble(['bark', 'meow']);
+		</script>
+
+		<!-- Exercise 7.3 -->
+		<script>
+			function arraySum(intNumbers) {
+				let total = 0;
+
+				intNumbers.forEach(function (number) {
+					total = total + number;
+				});
+
+			console.log(total)
+			}
+
+			arraySum([5, -3, 9, 15])
+		</script>
+
+	</body>
+</html>

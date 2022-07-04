@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 6</title>
+	</head>
+	<body>
+
+		<!-- Exercise 6.1 -->
+		<script>
+
+			function greeting(name) {
+				console.log('Hello', name);
+			}
+
+			greeting('Richard')
+		</script>
+
+		<!-- Exercise 6.2 -->
+		<script>
+
+			function toUpper(name) {
+				console.log(name.toUpperCase());
+			}
+
+			toUpper('Richard')
+		</script>
+
+		<!-- Exercise 6.3 -->
+		<script>
+
+			function converter(length) {
+				let element = document.createElement('div')
+				element.innerText = length * 2.54
+				document.body.appendChild(element)
+			}
+
+			converter(5)
+		</script>
+	</body>
+</html>
