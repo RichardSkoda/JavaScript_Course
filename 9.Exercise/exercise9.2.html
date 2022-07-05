@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 9.2</title>
+	</head>
+	<body>
+		<input type="text" id="todo" placeholder="Give me value" />
+
+		<button onclick="convertCM()">Convert to cm</button>
+		<button onclick="convertINCH()">Convert to inch</button>
+
+		<script>
+
+			function convertCM() {
+				const textbox = document.getElementById('todo');
+				const itemToConvert = textbox.value;
+
+				const element = document.createElement('div');
+				element.innerText = +itemToConvert / 2.54;
+
+				document.body.appendChild(element);
+			}
+
+			function convertINCH() {
+				const textbox = document.getElementById('todo');
+				const itemToConvert = textbox.value;
+
+				const element = document.createElement('div');
+				element.innerText = +itemToConvert * 2.54;
+
+				document.body.appendChild(element);
+			}
+
+		</script>
+	</body>
+</html>

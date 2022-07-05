@@ -50,5 +50,20 @@
 		}
 
 	</script>
+
+	<!-- Exercise 8.4 -->
+	<input type="text" id="text" />
+	<button id="take-text" onclick="takeText()">Grab input</button>
+
+	<script>
+		function takeText() {
+			let textbox = document.getElementById('text');
+			let text = textbox.value;
+
+			let div = document.createElement('div');
+			div.innerText = text;
+			document.body.appendChild(div);
+		};
+	</script>
 	</body>
 </html>

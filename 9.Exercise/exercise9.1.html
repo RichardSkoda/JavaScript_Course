@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 9</title>
+	</head>
+	<body>
+		<button id="apple" onclick="addFood('Apple')">Apple</button>
+		<button id="tomato" onclick="addFood('Toamto')">Tomato</button>
+		<button id="eggs" onclick="addFood('Eggs')">Eggs</button>
+
+		<button id="clear" onclick="clearCart()">Clear</button>
+
+		<div id="shoping-cart"></div>
+
+		<script>
+
+const shopingCart = document.getElementById('shoping-cart');
+
+			function addFood(food) {
+				const cartItem = document.createElement('div');
+				cartItem.innerText = food;
+				shopingCart.appendChild(cartItem);
+			}
+
+		function clearCart() {
+			shopingCart.innerHTML = '';
+		}
+
+
+		</script>
+	</body>
+</html>
