@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Exercise 10.2</title>
+	</head>
+	<body>
+		<div id="receipt"></div>
+		<script>
+
+			const receipt = document.getElementById('receipt');
+
+			function displayReceipt(cartArray) {
+				receipt.innerHTML = '';
+				let totalPrice = 0
+
+				cartArray.forEach(function (item) {
+					priceItem = item.price * item.quantity;
+					const displayReceiptItem = document.createElement('div');
+					displayReceiptItem.innerText = item.name + ' $' + item.price + ' * ' + item.quantity + ' = $' + priceItem;
+					receipt.appendChild(displayReceiptItem);
+				});
+
+				cartArray.forEach(function (item) {
+					totalPrice = totalPrice + item.price * item.quantity;
+				});
+
+				const displayTotalPrice = document.createElement('div');
+				displayTotalPrice.innerText = 'Cart total = $' + totalPrice;
+				receipt.appendChild(displayTotalPrice)
+
+			}
+
+			displayReceipt([
+				{ name: 'Apple', price: 4, quantity: 2 },
+				{ name: 'Orange', price: 3, quantity: 3 }
+			]);
+
+			
+		</script>
+	</body>
+</html>
