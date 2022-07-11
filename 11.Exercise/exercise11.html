@@ -4,6 +4,73 @@
 		<title>Exercises 11</title>
 	</head>
 	<body>
+		<div id="food-list"></div>
+
+		<script>
+			const foodInCart = {
+				Apple: 3,
+				Orange: 4,
+				Eggs: 2
+			}
+
+			let applePrice = 0;
+			console.log(applePrice)
+			let orangePrice = 0;
+			let eggsPrice = 0;
+			let total = applePrice + orangePrice + eggsPrice;
+
+			function createCart(foodPrices) {
+				const foodList = Object.keys(foodInCart);
 			
+				foodList.forEach(function (food) {
+					const foodLine = document.createElement('div');
+					const foodPrice = foodInCart[food]
+					foodLine.innerText = food + ' $' + foodPrice;
+
+					const addButton = document.createElement('button');
+					addButton.innerText = 'Add';
+					addButton.style = 'margin-left: 15px';
+					addButton.onclick = function () {
+						if (food === 'Apple') {
+							applePrice = applePrice + foodPrice
+							return applePrice
+						} else if (food === 'Orange') {
+							orangePrice = orangePrice + foodPrice
+							return orangePrice
+						} else if (food === 'Eggs') {
+							eggsPrice = eggsPrice + foodPrice
+							return eggsPrice
+						}
+					};
+					foodLine.appendChild(addButton);
+
+					const totalItemDisplay = document.createElement('div');
+					if (food === 'Apple') {
+						totalItemDisplay.innerText = 'Total price of ' + food + ' = $' + applePrice;
+					} else if (food === 'Orange') {
+						totalItemDisplay.innerText = 'Total price of ' + food + ' = $' + orangePrice;
+					} else if (food === 'Eggs') {
+						totalItemDisplay.innerText = 'Total price of ' + food + ' = $' + eggsPrice;
+					}
+
+					totalItemDisplay.style = 'margin-bottom: 20px';
+
+					const foodDiv = document.getElementById('food-list');
+					foodDiv.appendChild(foodLine);
+					foodDiv.appendChild(totalItemDisplay);
+
+				});
+
+				const totalDisplay = document.createElement('div');
+				totalDisplay.innerText = 'Total price = $' + total;
+				totalDisplay.style = 'margin-top: 50px';
+
+				const foodDiv = document.getElementById('food-list');
+				foodDiv.appendChild(totalDisplay);
+			}
+
+			createCart(foodInCart)
+			
+		</script>
 	</body>
 </html>

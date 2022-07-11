@@ -10,8 +10,8 @@
 
 		<div id="todo-list"></div>
 		<script>
-
-			const todos = [{
+			// Model section
+			let todos = [{
 				title: 'Get groceries',
 				dueDate: '2022-15-7',
 				id: 'id1'
@@ -25,8 +25,38 @@
 				id: 'id3'
 			}];
 
+			// Creates a todo
+			function createTodo(title, dueDate) {
+				const id = '' + new Date().getTime();
+
+				todos.push({
+					title: title,
+					dueDate: dueDate,
+					id: id
+				});
+			}
+
+			// Deletes a todo
+			function removeTodo(idToDelete) {
+				todos = todos.filter(function (todo) {
+					// If the id of this todo matches idToDelete, return false
+					// For everithing else, return true
+					if (todo.id === idToDelete) {
+						return false;
+					}  else {
+						return true;
+					}
+				});
+			}
+
+			// Check a todo
+			function checkTodo() {
+
+			}
+
 			render()
 
+			// Controller section
 			function addTodo() {
 				const textbox = document.getElementById('todo-title');
 				const title = textbox.value;
@@ -34,39 +64,49 @@
 				const datePicker = document.getElementById('date-picker');
 				const dueDate = datePicker.value;
 
-				const id = new Date().getTime();
-
-				todos.push({
-					title: title,
-					dueDate: dueDate,
-					id: id
-				});
+				createTodo(title, dueDate);
 
 				render();
 			}
 
 			function deleteTodo(event) {
 				const deleteButton = event.target;
-				const idDelete = deleteButton.id;
+				const idToDelete = deleteButton.id;
+
+				removeTodo(idToDelete)
+
+				render();
+				
 			}
 
+			// View section
 			function render() {
 				//reset our list
-				document.getElementById('todo-list').innerHTML = '';
+				document.getElementById('todo-list' ).innerHTML = '';
 
 				todos.forEach(function (todo) {
 					const element = document.createElement('div');
 					element.innerText = todo.title + ' ' + todo.dueDate;
+					element.style = 'padding: 5px'
+
+					const checkbox = document.createElement('input');
+					checkbox.setAttribute('type', 'checkbox');
+					checkbox.style = 'margin-right: 12px';
+					checkbox.onchange = checkbox.checked;
+					checkbox.dataset.todoId = todo.id;
+					element.prepend(checkbox);
+					// document.prepend(checkbox);
 
 					const deleteButton = document.createElement('button');
 					deleteButton.innerText = 'Delete';
-					deleteButton.style = 'margin-left: 12px';
+					deleteButton.style = 'margin-left: 12px;';
 					deleteButton.onclick = deleteTodo;
 					deleteButton.id = todo.id;
 					element.appendChild(deleteButton);
 
 					const todoList = document.getElementById('todo-list');
 					todoList.appendChild(element);
+
 				});
 			}
 

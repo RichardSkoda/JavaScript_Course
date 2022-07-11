@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Exercise 13.1</title>
+</head>
+<body>
+	<script>
+
+		function maxPositiveNumber(numArray) {
+			let largestNumber = Infinity;
+
+			numArray.forEach(function (num) {
+				if (num < largestNumber && num >= 0) {
+					largestNumber = num;
+				}
+			});
+
+			return largestNumber
+		}
+
+		let largestNumber = maxPositiveNumber([1, 10, -5, 12, -20, 1, 10]);
+	</script>
+
+</body>
+</html>

@@ -1,38 +1,25 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>Exercise 10.2 TEST</title>
-	</head>
-	<body>
-		<div id="receipt"></div>
-    <script>
-      const receipt = document.getElementById('receipt');
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let myName = "Richard Skoda";
+    let age = 35;
 
-      function displayReceipt(cartArray) {
-        receipt.innerHTML = '';
+    console.log('Ahoj, jmenuji se ' + myName + ' a je mi ' + age + ' let.');
 
-        cartArray.forEach(function (item) {
-          const receiptLine = document.createElement('div');
-          receiptLine.innerText = item.name + ' $' + item.price + ' * ' + item.quantity;
-          receipt.appendChild(receiptLine);
-        });
-        // You can also calculate the total using just the loop above, but I like
-    // to separate them out so each loop does one thing.
-    let cartTotal = 0;
-    cartArray.forEach(function (item) {
-      cartTotal = cartTotal + item.price * item.quantity;
-    });
+    console.log(`Ahoj, jmenuji se ${myName} a je mi ${age} let.`)
 
-    const totalLine = document.createElement('div');
-    totalLine.innerText = 'Cart total = $' + cartTotal;
-    receipt.appendChild(totalLine);
-      }
+    let pozdrav = function (firstName, lastName) {
+      console.log(`Ahoj, jmenuji se ${firstName} a moje příjmení je ${lastName}.`)
+    }
 
-      displayReceipt([
-        { name: 'Apple', price: 4, quantity: 2 },
-        { name: 'Orange', price: 3, quantity: 3 }
-      ]);
-    </script>
-		
-	</body>
+    pozdrav('Richard', 'Skoda');
+  </script>
+</body>
 </html>
