@@ -4,7 +4,6 @@
 		<title>Todo App</title>
 	</head>
 	<body>
-		<button onclick="alert('Hi')">Click</button>
 		<input id="todo-title" type="text" placeholder="Give me a new task"/>
 		<input id="date-picker" type="date" />
 		<button onclick="addTodo()">Add Totdo</button>
@@ -50,11 +49,11 @@
 				});
 			}
 
+			// Check checkbox
 			function toggleTodo(todoId, checked) {
 				todos.forEach(function (todo) {
 					if (todo.id === todoId) {
 						todo.isDone = checked;
-						console.log(todo.isDone)
 					}
 				});
 			}
@@ -87,7 +86,6 @@
 
 				const todoId = checkbox.dataset.todoId;
 				const checked = checkbox.checked;
-				console.log(checked)
 
 				toggleTodo(todoId, checked);
 
