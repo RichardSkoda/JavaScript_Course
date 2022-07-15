@@ -1,0 +1,31 @@
+.input {
+	background-color: rgb(241, 241, 241);
+	font-size: 25px;
+	padding: 15px 25px;
+	border: none;
+	border-radius: 4px;
+}
+
+.check-button {
+	background-color: rgb(79, 135, 238);
+	font-size: 25px;
+	font-weight: bold;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 15px 25px;
+	cursor: pointer;
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+	transition: box-shadow 0.15s;
+}
+
+.check-button:hover {
+	background-color: rgb(61, 116, 216)
+}
+
+.check-button:active {
+	margin-top: 2px;
+	margin-left: 2px;
+	box-shadow: 0 0 0;
+}
+
