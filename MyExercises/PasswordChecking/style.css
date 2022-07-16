@@ -17,7 +17,7 @@
 	cursor: pointer;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
 	transition: box-shadow 0.15s;
-	margin-left: -230px;
+	margin-left: -100px;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 }
