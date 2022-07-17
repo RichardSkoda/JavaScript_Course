@@ -1,4 +1,5 @@
 body {
+  background-color: bisque;
   font-family: Roboto, Arial;
 }
 
@@ -6,37 +7,53 @@ body {
   background-color: bisque;
   display: block;
   border: 1px solid red;
-  width: 219px;
+  width: 220px;
 }
 
 .buttons {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   grid-template-columns: 1fr 1fr;
   background-color: rgb(255, 102, 0);
 }
 
-.roll-button {
+.roll-button,
+.reset-button {
   background-color: rgb(255, 102, 0);
-  color: white;
+  color: bisque;
   font-size: 20px;
-  padding: 5px 20px;
+  width: 33px;
+  height: 25px;
+  padding: 0;
+  margin-left: 40px;
+  justify-content: center;
   border: none;
   cursor: pointer;
 }
 
 .reset-button {
-  background-color: rgb(255, 0, 0);
-  color: white;
-  font-size: 20px;
-  padding: 5px 20px;
-  border: none;
-  cursor: pointer;
+  margin-right: 40px;
+}
+
+.roll-button:hover,
+.reset-button:hover {
+  color: rgb(75, 66, 54);
+}
+
+.roll-button:active,
+.reset-button:active {
+  font-size: 19px;
 }
 
 .result {
   display: grid;
-  align-items: center;
-  background-color: bisque;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 10px;
+  height: 150px;
+  background-color: white;
+  padding-left: 7px;
+  padding-top: 15px;
 }
 
 .score {
@@ -47,5 +64,5 @@ body {
 }
 
 .score-text {
-  color: white;
+  color: bisque;
 }

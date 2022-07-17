@@ -32,14 +32,26 @@ const diceMin = 1;
       let roll = Math.floor(Math.random() * (diceMax - diceMin + 1)) + diceMin;
       rolledNumbers.push(roll);
 
-      const newRoll = document.createElement('div');
-      newRoll.innerText = `Roll ${rolls} = ${roll}`;
+      const newRoll = document.createElement('img');
+      if (roll === 1) {
+        newRoll.src = 'Images/dice-1-md.jpg';
+      } else if (roll === 2) {
+        newRoll.src = 'Images/dice-2-md.jpg';
+      }else if (roll === 3) {
+        newRoll.src = 'Images/dice-3-md.jpg';
+      }else if (roll === 4) {
+        newRoll.src = 'Images/dice-4-md.jpg';
+      }else if (roll === 5) {
+        newRoll.src = 'Images/dice-5-md.jpg';
+      }else if (roll === 6) {
+        newRoll.src = 'Images/dice-6-md.jpg';
+      }
+      newRoll.style = 'width: 60px; background-color: bisque';
       result.appendChild(newRoll);
       console.log(rolledNumbers);
 
-      scoreView.innerText = '???';
       let score = resultRolls(rolledNumbers, rolls)
-      scoreView.innerText = `Score = ${score}`;
+      scoreView.innerHTML = `Score = ${score}`;
 
       console.log(rolls);
       stopRolling(rolls, score);
