@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dice</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
+</head>
+<body>
+  <div class="playground">
+    <div class="buttons">
+      <button id="roll-button" class="roll-button" onclick="rollDice()">Roll</button> 
+      <button id="reset-button" class="reset-button" onclick="resetGame()" hidden>Reset</button>
+    </div>
+    <div id="result" class="result"></div>
+    <div class="score">
+      <div id="total-score" class="score-text">Score = 0</div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+  <!-- Next I want to add picture to center of screen with comfirm button when game is done. While picture appear whole screen gets dark and you can click only on confirm button  -->
+  <!-- Next thing I want to add picture of the dice with right value to each roll. After click on roll button dice should appear and rotate for 3 seconds and then stop at right number -->
+
+</body>
+</html>

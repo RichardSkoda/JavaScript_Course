@@ -1,20 +1,37 @@
 <!DOCTYPE html>
-<html>
-	<head></head>
-	<body>
-		<script>
-		
-			let firstName = 'Richard';
-			let sentense = '    Ahoj vole .   '
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let number = 3.1438
 
-			console.log(firstName.length);
+		console.log(number.toFixed(3));
+		console.log(Math.round(number));
+		console.log(Math.floor(number));
+		console.log(Math.ceil(number));
+		console.log('round and ceil togeher')
+		console.log(Math.ceil(Math.random() * 10));
+		console.log(Math.ceil(Math.random() * 10));
+		console.log(Math.ceil(Math.random() * 10));
+		console.log('random from range');
+		let min = 10;
+		let max = 15;
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.floor(Math.random() * (max - min + 0.1)) + min);
+		console.log(Math.PI);
 
-			console.log(firstName.toUpperCase());
-			console.log(firstName.toLowerCase());
-			console.log(firstName.includes('ch'));
 
-			console.log(sentense.trim());
-
-		</script>
-	</body>
+	</script>
+</body>
 </html>
