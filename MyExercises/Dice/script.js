@@ -6,6 +6,7 @@ let rolledNumbers = [];
 
 const result = document.getElementById('result');
 const scoreView = document.getElementById('total-score');
+const overlay = document.getElementById('overlay');
 
 function resultRolls(rolledNumbers, rolls) {
   let sumNumbers = 0;
@@ -20,9 +21,11 @@ function stopRolling(rolls, score) {
     document.getElementById('roll-button').disabled = true;
     document.getElementById('reset-button').hidden = false;
     if (score >= 25) {
-      alert('You won!!')
+      overlay.style.position = 'fixed';
+      overlay.style.display = 'flex';
     } else {
-      alert('You lost!!')
+      overlay.style.position = 'fixed';
+      overlay.style.display = 'flex';
     }
   };
 }
@@ -45,7 +48,7 @@ function rollDice() {
     newRoll.src = 'Images/dice-5-md.jpg';
   }else if (roll === 6) {
     newRoll.src = 'Images/dice-6-md.jpg';
-  }
+  };
   newRoll.style = 'width: 60px; background-color: bisque';
   result.appendChild(newRoll);
 
