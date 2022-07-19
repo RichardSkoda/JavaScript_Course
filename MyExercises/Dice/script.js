@@ -9,6 +9,7 @@ const scoreView = document.getElementById('total-score');
 const container2 = document.getElementById('container2');
 const rollButton = document.getElementById('roll-button');
 const resetButton = document.getElementById('reset-button');
+let img = document.getElementById('win-lose-picture');
 
 function resultRolls(rolledNumbers, rolls) {
   let sumNumbers = 0;
@@ -25,8 +26,8 @@ function stopRolling(rolls, score) {
     resetButton.hidden = false;
     if (score >= 25) {
       container2.hidden = false;
+      img.src = "Images/win.jpg";
     } else {
-      let img = document.getElementById('win-lose-picture');
       img.src = "Images/lose.jpg";
       container2.hidden = false;
     }
