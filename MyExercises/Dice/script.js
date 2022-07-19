@@ -7,6 +7,8 @@ let rolledNumbers = [];
 const result = document.getElementById('result');
 const scoreView = document.getElementById('total-score');
 const overlay = document.getElementById('overlay');
+const rollButton = document.getElementById('roll-button');
+const resetButton = document.getElementById('reset-button');
 
 function resultRolls(rolledNumbers, rolls) {
   let sumNumbers = 0;
@@ -18,14 +20,17 @@ function resultRolls(rolledNumbers, rolls) {
 
 function stopRolling(rolls, score) {
   if (rolls === 6) {
-    document.getElementById('roll-button').disabled = true;
-    document.getElementById('reset-button').hidden = false;
+    rollButton.disabled = true;
+    rollButton.style = 'color: rgb(101, 65, 41); cursor: none';
+    resetButton.hidden = false;
     if (score >= 25) {
-      overlay.style.position = 'fixed';
-      overlay.style.display = 'flex';
+      overlay.hidden = false;
+      overlay.style.display = 'flex'
     } else {
-      overlay.style.position = 'fixed';
-      overlay.style.display = 'flex';
+      let img = document.getElementById('win-lose-picture');
+      img.src = "Images/lose.jpg";
+      overlay.hidden = false;
+      overlay.style.display = 'flex'
     }
   };
 }
@@ -63,6 +68,12 @@ function resetGame() {
   rolls = 0;
   rolledNumbers = [];
   scoreView.innerText = 'Score = 0'
-  document.getElementById('roll-button').disabled = false;
-  document.getElementById('reset-button').hidden = true;
-}
+  rollButton.disabled = false;
+  rollButton.style = 'color: bisque';
+  resetButton.hidden = true;
+};
+
+function confirm() {
+  overlay.style.display = 'none'
+  overlay.hidden = true;
+};
