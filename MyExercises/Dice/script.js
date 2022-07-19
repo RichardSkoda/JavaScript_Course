@@ -6,7 +6,7 @@ let rolledNumbers = [];
 
 const result = document.getElementById('result');
 const scoreView = document.getElementById('total-score');
-const overlay = document.getElementById('overlay');
+const container2 = document.getElementById('container2');
 const rollButton = document.getElementById('roll-button');
 const resetButton = document.getElementById('reset-button');
 
@@ -24,13 +24,11 @@ function stopRolling(rolls, score) {
     rollButton.style = 'color: rgb(101, 65, 41); cursor: none';
     resetButton.hidden = false;
     if (score >= 25) {
-      overlay.hidden = false;
-      overlay.style.display = 'flex'
+      container2.hidden = false;
     } else {
       let img = document.getElementById('win-lose-picture');
       img.src = "Images/lose.jpg";
-      overlay.hidden = false;
-      overlay.style.display = 'flex'
+      container2.hidden = false;
     }
   };
 }
@@ -74,6 +72,5 @@ function resetGame() {
 };
 
 function confirm() {
-  overlay.style.display = 'none'
-  overlay.hidden = true;
+  container2.hidden = true;
 };

@@ -11,21 +11,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">  
 </head>
 <body>
-  <div class="playground">
-    <div class="buttons">
-      <button id="roll-button" class="roll-button" onclick="rollDice()">Roll</button> 
-      <button id="reset-button" class="reset-button" onclick="resetGame()" hidden>Reset</button>
-    </div>
-    <div id="result" class="result"></div>
-    <div class="score">
-      <div id="total-score" class="score-text">Score = 0</div>
+  <div class="container1">
+    <div class="playground">
+      <div class="buttons">
+        <button id="roll-button" class="roll-button" onclick="rollDice()">Roll</button> 
+        <button id="reset-button" class="reset-button" onclick="resetGame()" hidden>Reset</button>
+      </div>
+      <div id="result" class="result"></div>
+      <div class="score">
+        <div id="total-score" class="score-text">Score = 0</div>
     </div>
   </div>
-  <div id="overlay" class="overlay" hidden>
-    <div id="window" class="window">
-      <img id="win-lose-picture" class="pic" src="Images/win.jpg">
-      <button class="dark-button" onclick="confirm()">CONFIRM</button>
-    </div>
+  </div>
+  <div id="container2" hidden>
+    <div class="overlay">
+      <div class="window">
+        <img id="win-lose-picture" class="pic" src="Images/win.jpg">
+        <button class="dark-button" onclick="confirm()">CONFIRM</button>
+      </div>
+  </div>
+  
   </div>
 
   <script src="script.js"></script>
