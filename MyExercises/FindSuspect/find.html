@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Document</title>
+	<title>Suspect</title>
 </head>
 <body>
 	<script>
@@ -27,11 +27,11 @@
 		}];
 
 
-		let criminalLastName = prompt('Enter last name');
+		let criminalLastName = prompt('Enter last name').toLowerCase();
 
 		function findCriminal(name) {
 			let criminal = criminals.findIndex(function (ourCriminal) {
-				return ourCriminal.lastName === criminalLastName;
+				return ourCriminal.lastName.toLowerCase() === criminalLastName;
 			});
 			console.log(criminal);
 			Object.keys(criminals[criminal]).forEach(function (key) {
@@ -40,10 +40,6 @@
 		};
 
 		findCriminal(criminalLastName);
-		
-
-		
-
 
 	</script>
 </body>
