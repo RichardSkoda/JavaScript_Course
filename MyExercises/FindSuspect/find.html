@@ -24,8 +24,14 @@
 			lastName: 'Cock',
 			age: 33,
 			crime: 'prostitution'
+		}, {
+			firstName: 'Alah',
+			lastName: 'Akbar',
+			age: 150,
+			crime: 'muslim'
 		}];
 
+		// findIndex
 
 		let criminalLastName = prompt('Enter last name').toLowerCase();
 
@@ -39,7 +45,15 @@
 			});
 		};
 
-		findCriminal(criminalLastName);
+		let result = findCriminal(criminalLastName);
+
+		//filter
+
+		let result2 = criminals.filter(criminal => criminal.lastName.toLocaleLowerCase().includes('o') || criminal.firstName.toLocaleLowerCase().includes('o'));
+
+		result2.forEach( function (person) {Object.keys(person).forEach(function (key) {
+			console.log(`${key}: ${person[key]}`);
+		})});
 
 	</script>
 </body>
