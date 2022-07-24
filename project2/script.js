@@ -36,6 +36,8 @@ for(let j = 0; j < toDoLeft.length; j++) {
   document.querySelector('main').appendChild(paragraphLeft);
 };
 
-
+document.querySelector('.myBtn').addEventListener('click', function (event) {
+  console.log('Click was done.')
+});
 
  

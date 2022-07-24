@@ -4,58 +4,18 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
 	<title>Suspect</title>
 </head>
 <body>
-	<script>
-		
-		let criminals = [{
-			firstName: 'Trotl',
-			lastName: 'Black',
-			age: 29,
-			crime: 'murder'
-		}, {
-			firstName: 'John',
-			lastName: 'Doe',
-			age: 45,
-			crime: 'bank robber'
-		}, {
-			firstName: 'Jane',
-			lastName: 'Cock',
-			age: 33,
-			crime: 'prostitution'
-		}, {
-			firstName: 'Alah',
-			lastName: 'Akbar',
-			age: 150,
-			crime: 'muslim'
-		}];
+	
+	<input id="input-text" type="text" placeholder="SPZ">
 
-		// findIndex
+	<div id="criminal">
 
-		let criminalLastName = prompt('Enter last name').toLowerCase();
+	</div>
 
-		function findCriminal(name) {
-			let criminal = criminals.findIndex(function (ourCriminal) {
-				return ourCriminal.lastName.toLowerCase() === criminalLastName;
-			});
-			console.log(criminal);
-			Object.keys(criminals[criminal]).forEach(function (key) {
-				console.log(`${key}: ${criminals[criminal][key]}`)
-			});
-		};
-
-		let result = findCriminal(criminalLastName);
-
-		//filter
-
-		let result2 = criminals.filter(criminal => criminal.lastName.toLocaleLowerCase().includes('o') || criminal.firstName.toLocaleLowerCase().includes('o'));
-
-		result2.forEach( function (person) {Object.keys(person).forEach(function (key) {
-			console.log(`${key}: ${person[key]}`);
-		})});
-
-	</script>
+	<script src="script.js"></script>
 </body>
 </html>
 
