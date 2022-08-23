@@ -58,6 +58,7 @@ const renderCriminals = function(ourCriminals, tryToFind) {
 };
 
 spz.addEventListener('input', function (event) {
+  console.log(filters)
   filters.searchText = event.target.value;
   renderCriminals(criminals, filters);
 });

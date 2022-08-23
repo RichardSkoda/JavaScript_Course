@@ -8,7 +8,7 @@ h1 {
   color: blue;
 }
 
-.myBtn {
+.show-all {
   background-color: rgb(55, 109, 226);
   width: 44px;
   font-family: Arial;
@@ -21,15 +21,16 @@ h1 {
   letter-spacing: 1px;
 }
 
-a:hover {
+.show-all:hover {
   background-color: rgb(35, 98, 233);
 }
 
-a:active {
+.show-all:active {
   background-color: white;
   color: rgb(35, 98, 233);
   padding: 7px 12px;
   border: 2px solid rgb(35, 98, 233);
+  margin-right: 2px;
 }
 
 .handler {

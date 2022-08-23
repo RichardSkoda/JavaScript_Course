@@ -1,21 +1,11 @@
-data = [{
-    dataModels: [{
-        childNodes: {
-            appId: 'foo'
-        }
-    }]
-}, {
-dataModels: [{
-    childNodes: {
-        appId: 'foo'
-    }
-}]}];
+const body = document.querySelector('body');
+const form = document.querySelector('#my-form');
 
+form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    let color = event.target.elements.color.value;
 
-data.forEach(function(obj) {
-    console.log(obj)
-    var res = obj.dataModels.map(function(o) {
-        return o;
-    });
-    console.log(res[0]);
-});
+    body.style.backgroundColor = color;
+
+    event.target.elements.color.value = '';
+})

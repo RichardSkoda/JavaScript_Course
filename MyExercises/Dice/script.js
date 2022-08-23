@@ -11,7 +11,7 @@ const rollButton = document.getElementById('roll-button');
 const resetButton = document.getElementById('reset-button');
 let img = document.getElementById('win-lose-picture');
 
-function resultRolls(rolledNumbers, rolls) {
+function resultRolls(rolledNumbers) {
   let sumNumbers = 0;
   rolledNumbers.forEach(function (number) {
     sumNumbers = sumNumbers + number
@@ -56,10 +56,14 @@ function rollDice() {
   newRoll.style = 'width: 60px; background-color: bisque';
   result.appendChild(newRoll);
 
-  let score = resultRolls(rolledNumbers, rolls)
+  let score = resultRolls(rolledNumbers);
   scoreView.innerHTML = `Score = ${score}`;
 
   stopRolling(rolls, score);
+};
+
+function confirm() {
+  container2.hidden = true;
 };
 
 function resetGame() {
@@ -68,10 +72,7 @@ function resetGame() {
   rolledNumbers = [];
   scoreView.innerText = 'Score = 0'
   rollButton.disabled = false;
-  rollButton.style = 'color: bisque';
+  rollButton.style = 'cursor: pointer';
   resetButton.hidden = true;
 };
 
-function confirm() {
-  container2.hidden = true;
-};

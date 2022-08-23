@@ -11,54 +11,73 @@ let myToDos = [{
   task: 'Feed the dog',
   completion: 'yes'
 }, {
-  task: 'Fedd the cat',
+  task: 'Feed the cat',
   completion: 'no'
 }];
 
 
 const searchInput = document.querySelector('.search-bar');
-const searchedList = document.querySelector('main');
+const main = document.querySelector('main');
+// div for list of todos
+const listDiv = document.createElement('div');
+main.appendChild(listDiv);
+// div for number of left todos
+const leftsDiv = document.createElement('div');
+main.appendChild(leftsDiv);
 
-function renderSearchedTodos(todos, searchingText) {
-  searchedList.innerHTML = '';
+// render whole list todos
+document.querySelector('.show-all').addEventListener('click', function () {
+  listDiv.innerHTML = '';
+  leftsDiv.innerHTML = '';
+  renderLeftList(myToDos);
+  renderList(myToDos);
+});
 
-  let results = todos.filter(function (todo) {
-    return todo.task.toLowerCase().includes(searchingText.toLowerCase());
-  });
-  results.forEach(function (result) {
-    for (key in result) {
-      const oneTodo = document.createElement('p')
-      oneTodo.textContent = `${key}: ${result[key]}`
-      oneTodo.style = 'margin-top: 0px; margin-bottom: 0px'
-      searchedList.appendChild(oneTodo)
-    };
-    const blankLine = document.createElement('br');
-    searchedList.appendChild(blankLine);
-  });
-};
-
+// input event
 searchInput.addEventListener('input', function (event) {
   searchingText = event.target.value;
   renderSearchedTodos(myToDos, searchingText);
 });
 
 
-/*
-for(let i = 0; i < myToDos.length; i++) {
-  const paragraph = document.createElement('p');
-  paragraph.textContent = myToDos[i].text;
-  document.querySelector('main').appendChild(paragraph);
+//render list of searched text
+function renderSearchedTodos(todos, searchingText) {
+  
+  let results = todos.filter(function (todo) {
+    return todo.task.toLowerCase().includes(searchingText.toLowerCase());
+  });
+  listDiv.innerHTML = '';
+  leftsDiv.innerHTML = '';
+  renderLeftList(results);
+  renderList(results);
 };
-*/
 
+// show how many is not complete
+function renderLeftList(allToDos) {
+  let incomplete = allToDos.filter(function (todo) {
+    return todo.completion === 'no';
+  });
+  
+  const incompleteToDos = document.createElement('p');
+  incompleteToDos.textContent = `Left to do: ${incomplete.length}`;
+  leftsDiv.appendChild(incompleteToDos);
+};
 
+//render function
+function renderList(givenArrayOfObject) {
+  givenArrayOfObject.forEach(function (object) {
+    for(key in object) {
+      const paragraph = document.createElement('p');
+      paragraph.textContent = `${key}: ${object[key]}`;
+      paragraph.style = 'margin-top: 0px; margin-bottom: 0px';
+      listDiv.appendChild(paragraph);
+    };
+    const blankLine = document.createElement('br');
+    listDiv.appendChild(blankLine);
+  });
+};
 
-// todos left
 /*
-let toDoLeft = myToDos.filter(function (todo) {
-  return todo.completion === 'no';
-});
-
 const todoLeftTitle = document.createElement('h1');
 todoLeftTitle.textContent = 'Left to do';
 todoLeftTitle.style = 'color: red';
@@ -69,14 +88,5 @@ for(let j = 0; j < toDoLeft.length; j++) {
   paragraphLeft.textContent = toDoLeft[j].text;
   document.querySelector('main').appendChild(paragraphLeft);
 };
-
-
-
-
-// button
-
-document.querySelector('.myBtn').addEventListener('click', function (event) {
-  console.log('Click was done.')
-});
 
 */
