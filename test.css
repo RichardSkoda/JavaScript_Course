@@ -1,0 +1,16 @@
+/* reset css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.task-input {
+  margin: 20px;
+  margin-right: 0;
+}
+
+#alert {
+  display: none;
+}
+
