@@ -5,7 +5,7 @@ const namesCont = document.querySelector('#names-container')
 if(localStorage.getItem('names') === null) {
   var myArray = [];
 } else {
-  myArray = JSON.parse(localStorage.getItem('users'))
+  myArray = JSON.parse(localStorage.getItem('names'))
 }
 
 
