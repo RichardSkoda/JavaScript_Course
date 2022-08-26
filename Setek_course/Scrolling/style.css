@@ -1,0 +1,39 @@
+body {
+  height: 2500px;
+}
+
+ul {
+  display: flex;
+  gap: 10px;
+}
+
+li {
+  background-color: rgb(129, 85, 3);
+  padding: 8px;
+  border-radius: 10px;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+#toTopBtn{
+  display: none;
+  position: fixed;
+  right: 20px;
+  bottom: 50px;
+
+  background-color: rgb(129, 85, 3);
+  color: white;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+h2 {
+  color: red;
+}
