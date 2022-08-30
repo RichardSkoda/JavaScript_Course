@@ -34,6 +34,8 @@ function generateHTMLStructure(oneName) {
   const newDiv = document.createElement('div')
   const newSpan = document.createElement('span');
   const button = document.createElement('button')
+  const adultImg = document.createElement('img')
+
   newSpan.innerHTML = oneName.name;
 
   button.innerText = 'Remove name';
@@ -42,6 +44,14 @@ function generateHTMLStructure(oneName) {
   
   newDiv.appendChild(button);
   newDiv.appendChild(newSpan);
+
+  if(oneName.adult === true) {
+    adultImg.src = 'Img/thumb_up.png';
+  } else {
+    adultImg.src = 'Img/thumb_down.png';
+  }
+  adultImg.classList.add('adult-img')
+  newDiv.appendChild(adultImg);
 
   button.addEventListener('click', function() {
     removeName(names, oneName.id)

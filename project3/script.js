@@ -5,18 +5,21 @@ const names = getSavedNames()
 
 // odeslani formulare a ulozeni do localStorage pomoci promenne names
 const myForm = document.querySelector('#my-form');
+const adultCheckbox = document.querySelector('#check-adult');
 
 myForm.addEventListener('submit', function(event) {
   event.preventDefault();
 
   names.push({
     id: uuidv4(),
-    name: event.target.elements.name.value
+    name: event.target.elements.name.value,
+    adult: adultCheckbox.checked
   });
   
   saveNames(names)
 
   event.target.elements.name.value = '';
+  adultCheckbox.checked = false;
 });
 
 
