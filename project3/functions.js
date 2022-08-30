@@ -32,18 +32,22 @@ Generovani HTML struktury, kterou umistime do stranky po kliknuti na tlacitko 'V
 function generateHTMLStructure(oneName) {
 
   const newDiv = document.createElement('div')
-  const newSpan = document.createElement('span');
+  const newLink = document.createElement('a');
   const button = document.createElement('button')
   const adultImg = document.createElement('img')
 
-  newSpan.innerHTML = oneName.name;
+  newLink.innerHTML = oneName.name;
+  newLink.href = `edit_page.html#${oneName.name}/${oneName.id}`;
+  newLink.target = '_blank'
+  newLink.classList.add('name-link');
 
   button.innerText = 'Remove name';
+
   button.classList.add('remove-button');
   newDiv.classList.add('name-div');
   
   newDiv.appendChild(button);
-  newDiv.appendChild(newSpan);
+  newDiv.appendChild(newLink);
 
   if(oneName.adult === true) {
     adultImg.src = 'Img/thumb_up.png';

@@ -105,6 +105,11 @@ h1 {
   cursor: pointer;
 }
 
+.name-link {
+  text-decoration: none;
+  color: white;
+}
+
 .adult-img {
   padding-right: 10px;
 }
