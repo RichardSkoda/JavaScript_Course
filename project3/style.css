@@ -4,30 +4,84 @@
   padding: 0;
 }
 
+body {
+  background-color: #282828;
+  color: white;
+  padding-top: 20px;
+}
+
 h1 {
-  margin: 20px 20px;
+  text-align: center;
 }
 
 #my-form {
   display: flex;
   flex-direction: column;
-  width: 200px;
-  margin: 20px 20px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 300px;
   gap: 1px;
 }
 
+#name-input {
+  outline: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#submit-btn,
 .print-button {
-  margin: 20px 20px;
-  width: 200px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #026721;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  padding: 5px 5px;
+  cursor: pointer;
+  margin-top: 50px;
+}
+
+#submit-btn {
+  margin: 5px 0;
+}
+
+.list-names {
+  display: flex;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  flex-direction: column;
+  width: 300px;
+  margin-top: 30px;
 }
 
 .name-div {
   display: flex;
-  gap: 10px;
+  align-items: center;
+  position: relative;
+  left: 60%;
+  transform: translate(-50%);
+  gap: 20px;
   margin-bottom: 5px;
-  margin-left: 20px;
+  
 }
 
 .remove-button {
-  padding: 0 5px;
+  background-color: #9f1d00;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
 }
