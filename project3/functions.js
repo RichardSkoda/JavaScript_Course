@@ -37,8 +37,8 @@ function generateHTMLStructure(oneName) {
   const adultImg = document.createElement('img')
 
   newLink.innerHTML = oneName.name;
-  newLink.href = `edit_page.html#${oneName.name}/${oneName.id}`;
-  newLink.target = '_blank'
+  newLink.href = `edit_page.html#${oneName.id}`;
+  // newLink.target = '_blank'
   newLink.classList.add('name-link');
 
   button.innerText = 'Remove name';

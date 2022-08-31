@@ -36,3 +36,7 @@ printBtn.addEventListener('click', function() {
     listOfNames.appendChild(nameHTML);
   });
 });
+
+window.addEventListener('storage', function(){
+  location.reload();
+});

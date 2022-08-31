@@ -4,11 +4,23 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="edit_style.css">
   <title>Edit Page</title>
 </head>
 <body>
 
     <h1>Editing page</h1>
-  
+
+    <form id="editingForm">
+      <input type="text" id="editedName" name="editedName">
+      <input type="submit" id="submitBtn" value="Send">
+    </form>
+    <div class="link-back-container">
+      <a href="index.html" class="link-back">Back to name database</a>
+    </div>
+
+  <script src="functions.js"></script>
+  <script src="edit.js"></script>
 </body>
 </html>
