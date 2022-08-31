@@ -1,0 +1,61 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #282828;
+  color: white;
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+#editingForm {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  width: 300px;
+  gap: 1px;
+}
+
+#editedName {
+  outline: none;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 5px;
+  margin-top: 10px;
+}
+
+#submitBtn {
+  position: relative;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: #026721;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  width: 100px;
+  padding: 5px 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.link-back-container {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link-back {
+  text-decoration: none;
+  color: white;
+}
