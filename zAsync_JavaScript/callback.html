@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS- callback</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+    <hr>
+    <input type="text">
+
+
+    <script>
+        function makeSyncHttpRequest() {
+            const req = new XMLHttpRequest();
+            req.open('GET', 'http://localhost:8000/api.php', false);
+            req.send(null);
+
+            return req.responseText;
+        } 
+
+        function makeAsyncHttpRequest(callback) {
+
+            const req = new XMLHttpRequest();
+
+            req.open('GET', 'http://localhost:8000/api.php', true);
+
+            req.onreadystatechange = function () {
+                if(req.readyState !== 4) {
+                    return ;
+                }
+
+                if(req.status === 20) {
+                    callback(req);
+                } 
+            }
+
+            req.send(null);
+        }
+
+
+        console.log('Initing async http request');
+
+
+        makeAsyncHttpRequest(function (req) {
+            const data = JSON.parse(req.responseText);
+            console.log(data)
+
+            console.log('Request completed')
+            console.log(req.status, req.responseText)
+        });
+
+        // console.log(makeSyncHttpRequest());
+        console.log('After request call')
+        // alert(1);
+    </script>
+</body>
+</html>

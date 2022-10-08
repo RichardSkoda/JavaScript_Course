@@ -1,0 +1,5 @@
+in CMD set directions to file with php file and then type:
+
+php -S localhost:8000
+
+PHP must be installed on computer!!!

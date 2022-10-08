@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS- setTimeout</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+    <hr>
+    <input type="text">
+
+
+    <script>
+        // flip coin function
+
+        function flipACoin(timeout, chance = 0.5) {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    if (Math.random() > chance) {
+                        resolve();
+                    } else {
+                        reject();
+                    }
+                }, timeout)
+            });
+        };
+
+        flipACoin(2000)
+            .then(() => console.log('Panna'))
+            .catch(() => console.log('Orel'))
+
+
+        // second example
+
+        // function mySetTimeout(timeout) {
+        //     return new Promise((resolve, reject) => {
+        //         setTimeout(resolve, timeout);
+        //     });
+        // };
+
+        // mySetTimeout(3000)
+        //     .then(() => mySetTimeout(2000))
+        //     .then(() => console.log('Done! after 5s total'))
+
+
+        // first example
+
+        // console.log('before');
+
+        // setTimeout(() => {
+        //     console.log('done');
+
+        //     setTimeout(() => {
+        //         console.log('Next done');
+        //     }, 2000);
+        // }, 3000);
+
+        // console.log('after');
+    </script>
+</body>
+</html>

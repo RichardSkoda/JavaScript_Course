@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async JS- promise</title>
+</head>
+<body>
+    <h1>Hello there!</h1>
+    <hr>
+    <input type="text">
+
+
+    <script>
+        function makeSyncHttpRequest() {
+            const req = new XMLHttpRequest();
+            req.open('GET', 'http://localhost:8000/api.php', false);
+            req.send(null);
+
+            return req.responseText;
+        } 
+
+        function makeAsyncHttpRequest(callback) {
+            return new Promise((resolve, reject) => {
+
+                const req = new XMLHttpRequest();
+
+                req.open('GET', 'http://localhost:8000/api.php', true);
+
+                req.onreadystatechange = function () {
+                    if(req.readyState !== 4) {
+                        return ;
+                    }
+
+                    if(req.status === 201) {
+                        resolve(req);
+                    } else {
+                        reject(req);
+                    }
+                }
+                req.send(null);
+                });
+        }
+
+        console.log('Initing async http request');
+
+        makeAsyncHttpRequest()
+            .then(function (req) {
+                console.log('First req:')
+                console.log(req)
+
+                const users = JSON.parse(req.responseText);
+                const id = users[0].id
+
+                // fetch posts
+                return makeAsyncHttpRequest();
+            })
+            .then(function(req) {
+                console.log('Next req:');
+                console.log(req);
+            })
+            .catch(function (req) {
+                console.log(req)
+            })
+
+        console.log('After request call')
+        // alert(1);
+    </script>
+</body>
+</html>
