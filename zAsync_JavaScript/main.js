@@ -3,27 +3,32 @@ const { createApp } = Vue
         createApp({
             data() {
                 return {
-                    users: [
-                        'mojombo',
-                        'defunkt',
-                        'pjhyett',
-                        'wycast',
-                        'ezmobius',
-                        'ivey'
-                    ],
+                    users: [],
                     userAvatar: ''
                 }
             },
 
-            methods: {
-                loadUserAvatar(username) {
-                    console.log('Loading avatar for user:')
-                    console.log(username);
+            mounted() {
+                fetch("https://api.github.com/users")
+                    .then(response => response.json())
+                    .then(data => {
+                        this.users = data;
+                    });
 
-                    this.userAvatar = "https://via.placeholder.com/150"
+                    // stejny zapis jako nad tim
+                // promise.then((response) => {
+                //     return response.json(); // vraci promise
+                // }).then(data => {
+                //     console.log(data)
+                // });
+            },
+
+            methods: {
+                loadUserAvatar(user) {
+                    console.log('Loading avatar for user:')
+                    console.log(user.login);
+
+                    this.userAvatar = user.avatar_url
                 }
             }
         }).mount('#app')
-
-
-// github fetch API = "https://api.github.com/users/mojombo/orgs"

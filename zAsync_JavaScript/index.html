@@ -4,44 +4,30 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Async JS- Fetch</title>
-
-    <style>
-
-    </style>
+    <title>Async JS- Async/Await</title>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
-
 <body>
     <div id="app">
-        <div>
-            <h1>Github Users:</h1>
-    
-            <ul id="user-list">
-                <li v-for="username in users">
-                    {{ username }}
-                    <button @click="loadUserAvatar(username)">Load Avatar</button>
-                </li>
-            </ul>
-        </div>
-    
-        <div v-if="userAvatar">
-            <h2>User Avatar:</h2>
-                
-            <img 
-                alt="John Doe"
-                class="user-avatar"
-                :src="userAvatar"
-            />
-        </div>
+        <div class="error">{{ errorMessage }}</div>
+        <h1>Async/Await</h1>
+        <h2>Github Users</h2>
+        <ul>
+            <li v-for="user in users">
+                {{ user.login }}
+            </li>
+        </ul>
+        <button @click="loadGithubUsers()">Load Github users</button>
+        <button @click="clearUsers()">Clear users</button>
 
     </div>
     
 
-    <script src="main.js">
-        
-    </script>
+
+
+
+    <script src="main_await.js"></script>
     
 </body>
 </html>
